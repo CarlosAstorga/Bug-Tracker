@@ -19,15 +19,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        User::truncate();
-        Project::truncate();
-        Ticket::truncate();
-        File::truncate();
-        Comment::truncate();
-        DB::table('project_user')->truncate();
-        DB::table('role_user')->truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        // User::truncate();
+        // Project::truncate();
+        // Ticket::truncate();
+        // File::truncate();
+        // Comment::truncate();
+        // DB::table('project_user')->truncate();
+        // DB::table('role_user')->truncate();
+        // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $adminRole = Role::where('title', 'Administrador')->first();
         $developerRole = Role::where('title', 'Desarrollador')->first();
