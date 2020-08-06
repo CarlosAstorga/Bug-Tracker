@@ -13,9 +13,9 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement("SET session_replication_role = 'replica';");
-        Role::truncate();
-        DB::statement("SET session_replication_role = 'origin';");
+        // DB::statement("SET session_replication_role = 'replica';");
+        // Role::truncate();
+        // DB::statement("SET session_replication_role = 'origin';");
 
         Role::create(['title' => 'Administrador']);
         Role::create(['title' => 'Lider de proyecto']);

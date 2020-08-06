@@ -13,9 +13,9 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement("SET session_replication_role = 'replica';");
-        Status::truncate();
-        DB::statement("SET session_replication_role = 'origin';");
+        // DB::statement("SET session_replication_role = 'replica';");
+        // Status::truncate();
+        // DB::statement("SET session_replication_role = 'origin';");
 
         Status::create(['title' => 'Abierto']);
         Status::create(['title' => 'Pendiente']);

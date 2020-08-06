@@ -19,19 +19,19 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement("SET session_replication_role = 'replica';");
-        User::truncate();
-        Project::truncate();
-        Ticket::truncate();
-        File::truncate();
-        Comment::truncate();
-        DB::table('project_user')->truncate();
-        DB::table('role_user')->truncate();
-        DB::statement("SET session_replication_role = 'origin';");
+        // DB::statement("SET session_replication_role = 'replica';");
+        // User::truncate();
+        // Project::truncate();
+        // Ticket::truncate();
+        // File::truncate();
+        // Comment::truncate();
+        // DB::table('project_user')->truncate();
+        // DB::table('role_user')->truncate();
+        // DB::statement("SET session_replication_role = 'origin';");
 
-        $adminRole = Role::where('title', 'Administrador')->first();
-        $developerRole = Role::where('title', 'Desarrollador')->first();
-        $userRole = Role::where('title', 'Usuario')->first();
+        // $adminRole = Role::where('title', 'Administrador')->first();
+        // $developerRole = Role::where('title', 'Desarrollador')->first();
+        // $userRole = Role::where('title', 'Usuario')->first();
 
         $admin = User::create([
             'name' => 'Administrador',
@@ -67,10 +67,10 @@ class UsersTableSeeder extends Seeder
 
 
 
-        $admin->roles()->attach($adminRole);
-        $manager->roles()->attach($userRole);
-        $developer->roles()->attach($developerRole);
-        $user->roles()->attach($userRole);
+        $admin->roles()->attach(1);
+        $manager->roles()->attach(2);
+        $developer->roles()->attach(3);
+        $user->roles()->attach(4);
 
         // factory(App\User::class, 50)->create()->each(function ($user) {
         //     $user->roles()->attach(random_int(2, 4));
