@@ -36,8 +36,7 @@ class FileUploadController extends Controller
 
     public function destroy(File $file)
     {
-        $path = public_path('uploads');
-        unlink($path . '\\' . $file->file);
+        unlink(public_path('uploads/' . $file->file));
         $file->delete();
 
         return response()->json('Archivo eliminado del sistema', 200);
