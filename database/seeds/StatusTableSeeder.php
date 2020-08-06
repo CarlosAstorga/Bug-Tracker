@@ -13,9 +13,9 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        // Status::truncate();
-        // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        DB::statement("SET session_replication_role = 'replica';");
+        Status::truncate();
+        DB::statement("SET session_replication_role = 'origin';");
 
         Status::create(['title' => 'Abierto']);
         Status::create(['title' => 'Pendiente']);
