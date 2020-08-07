@@ -86,7 +86,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function photo()
     {
         if (file_exists(public_path("images/{$this->avatar}"))) {
-            return "/images/'{$this->avatar}";
+            return "/images/{$this->avatar}";
         } else {
             return '/images/avatar.png';
         }
