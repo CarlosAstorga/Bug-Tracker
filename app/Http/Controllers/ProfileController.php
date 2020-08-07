@@ -28,8 +28,7 @@ class ProfileController extends Controller
         if (isset($request->all()['avatar'])) {
             $oldAvatar = $user->avatar;
 
-            $path = public_path('images');
-            if ($oldAvatar != 'avatar.png') unlink($path . '\\' . $oldAvatar);
+            if ($oldAvatar != 'avatar.png') unlink(public_path('images/' . $oldAvatar));
             $imageName = time() . '.' . $request->avatar->extension();
             $user->avatar = $imageName;
             $request->avatar->move(public_path('images'), $imageName);
