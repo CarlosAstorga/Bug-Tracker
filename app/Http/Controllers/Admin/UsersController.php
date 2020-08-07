@@ -78,6 +78,7 @@ class UsersController extends Controller
                     });
             }) : $users;
 
+        $users = $users->orderBy('id', 'DESC');
         $paginator = $users->simplePaginate(10)->toJson();
 
         return $paginator;
