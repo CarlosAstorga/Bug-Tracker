@@ -51,5 +51,6 @@ class FileUploadController extends Controller
             $filePath = public_path('uploads/' . $file->file);
             return response()->download($filePath);
         }
+        return redirect()->back();
     }
 }
