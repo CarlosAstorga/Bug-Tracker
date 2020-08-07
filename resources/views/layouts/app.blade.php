@@ -122,7 +122,7 @@
                         @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="avatar" src="/images/{{auth()->user()->avatar}}" alt="avatar">
+                                <img class="avatar" src="{{ auth()->user()->photo() }}" alt="avatar">
                                 &nbsp;{{auth()->user()->name}}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

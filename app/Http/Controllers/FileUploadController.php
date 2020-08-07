@@ -36,7 +36,9 @@ class FileUploadController extends Controller
 
     public function destroy(File $file)
     {
-        unlink(public_path('uploads/' . $file->file));
+        if (file_exists(public_path('uploads/' . $file->file))) {
+            unlink(public_path('uploads/' . $file->file));
+        }
         $file->delete();
 
         return response()->json('Archivo eliminado del sistema', 200);
@@ -45,7 +47,9 @@ class FileUploadController extends Controller
     public function download(File $file)
     {
         Gate::authorize('download-file', $file);
-        $filePath = public_path('uploads/' . $file->file);
-        return response()->download($filePath);
+        if (file_exists(public_path('uploads/' . $file->file))) {
+            $filePath = public_path('uploads/' . $file->file);
+            return response()->download($filePath);
+        }
     }
 }

@@ -9,7 +9,7 @@
                     <a>Asignar roles</a>
                     <a href="{{ route('admin.users.index') }}">Regresar al listado</a>
                 </div>
-                <img style="vertical-align:center; width:200px; height: 200px" id="avatar" class="rounded-circle card-img-top align-self-center mt-3" src="/images/{{$user->avatar}}" alt="Card image cap">
+                <img style="vertical-align:center; width:200px; height: 200px" id="avatar" class="rounded-circle card-img-top align-self-center mt-3" src="{{ $user->photo() }}" alt="Card image cap">
                 <div class="card-body">
 
                     <form action="{{ route('admin.users.update', $user) }}" method="POST">

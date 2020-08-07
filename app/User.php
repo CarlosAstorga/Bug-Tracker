@@ -82,4 +82,13 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasRole('Administrador');
     }
+
+    public function photo()
+    {
+        if (file_exists(public_path("uploads/{$this->avatar}"))) {
+            return "/images/'{$this->avatar}";
+        } else {
+            return '/images/avatar.png';
+        }
+    }
 }
