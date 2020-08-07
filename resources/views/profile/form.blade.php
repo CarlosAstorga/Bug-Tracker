@@ -8,7 +8,7 @@
                     <a>Editar perfil</a>
                     <a href="{{ url('profile') }}">Regresar</a>
                 </div>
-                <img style="vertical-align:center; width:200px; height: 200px" id="avatar" class="rounded-circle card-img-top align-self-center mt-3" src="/images/{{auth()->user()->avatar}}" alt="Card image cap">
+                <img style="vertical-align:center; width:200px; height: 200px" id="avatar" class="rounded-circle card-img-top align-self-center mt-3" src="{{ auth()->user()->photo() }}" alt="Card image cap">
                 @if (count($errors) > 0)
                 <div class="alert alert-danger mt-3 mb-0">
                     <strong>Error!</strong> No se pudo completar la acción

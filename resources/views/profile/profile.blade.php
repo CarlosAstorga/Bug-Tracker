@@ -14,7 +14,7 @@
                     <strong>{{ $message }}</strong>
                 </div>
                 @endif
-                <img style="vertical-align:center; width:200px; height: 200px" id="avatar" class="rounded-circle card-img-top align-self-center mt-3" src="/images/{{auth()->user()->avatar}}" alt="Card image cap">
+                <img style="vertical-align:center; width:200px; height: 200px" id="avatar" class="rounded-circle card-img-top align-self-center mt-3" src="{{ auth()->user()->photo() }}" alt="Card image cap">
                 <div class="card-body justify-content-center d-flex">
                     <ul class="list-group list-group-flush mt-3">
                         <li class="list-group-item"><i class="fas fa-user mr-3"></i>{{auth()->user()->name}}</li>
